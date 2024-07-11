@@ -1,0 +1,159 @@
+
+<!-- saved from url=(0050)http://austx-esp-provisioning.chtrse.com/dlr-view/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>DLRView</title>
+    <link rel="stylesheet" type="text/css" href="./DLRView_files/dlrview.css">
+    <link rel="shortcut icon" href="http://austx-esp-provisioning.chtrse.com/dlr-view/brain.ico">
+    </head>
+    <body>
+        <div class="bigbox">
+            <div>
+                <h1 class="no-print">DLR View</h1>
+                <table class="no-print">
+                    <tbody><tr>
+                        <td colspan="3"><button onclick="searchCID()" style="font-weight:bold;font-size:1em">Search Circuit ID</button></td><td colspan="1" id="revHead" style="display:visible">Revision</td><td colspan="2" id="legHead" style="display:visible">Leg Name</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="text" id="circuit_idSelect"></td><td colspan="1" style="display:visible" id="revBox"><select id="revisionSelect" onchange="loadLegs()"><option value="1935205" selected="">Live</option></select></td><td colspan="2" style="display:visible" id="legBox"><select id="legSelect" onchange="loadData()"><option value="0">1</option></select></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div style="display:visible" id="infoDiv">
+                <table>
+                    <tbody><tr>
+                        <td colspan="1" class="label">Circuit ID:</td><td colspan="5" id="circuit_id" class="boxed">21.LOXX.000110..TWCC</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Order Number:</td><td colspan="2" id="order_number">ENG-02139573</td><td colspan="1" class="label">Ordered:</td><td colspan="2" id="ordered"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Ordering Customer:</td><td colspan="2" id="ordering_customer">HEB STORES</td><td colspan="1" class="label">Scheduled Date:</td><td colspan="2" id="scheduled_date">09/30/2020</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Topology:</td><td colspan="2" id="topology">Point to Point</td><td colspan="1" class="label">Due:</td><td colspan="2" id="due"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Bandwidth:</td><td colspan="2" id="bandwidth">200 Mbps</td><td colspan="1" class="label">Installed:</td><td colspan="2" id="installed"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Framing:</td><td colspan="2" id="framing"></td><td colspan="1" class="label">In Service:</td><td colspan="2" id="in_service">06/03/2021</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Signaling:</td><td colspan="2" id="signaling"></td><td colspan="1" class="label">Decommission:</td><td colspan="2" id="decommission"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Status:</td><td colspan="2" id="status">Live</td><td colspan="1" class="label">Service Priority:</td><td colspan="2" id="service_priority">NO</td>
+                    </tr>
+                    <tr><td colspan="1" class="label">Revision #:</td><td colspan="2" id="revision">7</td><td colspan="3"></td>
+                    </tr><tr>
+                        <td colspan="6" class="heading">A/Z Loc Site Information</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="heading">A Loc Site</td><td colspan="3" class="heading">Z Loc Site</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Site Hub ID:</td><td colspan="2" id="aSideHubID">SNANTXTK-HEB STORE 891/W30/646 S MAIN AVE</td><td colspan="1" class="label">Site Hub ID:</td><td colspan="2" id="zSideHubID">CDPKTXDU-HEB STORE//2800 E WHITESTONE BLVD</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Base Num:</td><td colspan="2" id="aSideBaseNum"></td><td colspan="1" class="label">Base Num:</td><td colspan="2" id="zSideBaseNum">HEB STORE 580</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" rowspan="2" class="label">Address:</td><td colspan="2" id="aSideStreet">646 S MAIN AVE</td><td colspan="1" rowspan="2" class="label">Address:</td><td colspan="2" id="zSideStreet">2800 E WHITESTONE BLVD</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="aSideStateZip">SAN ANTONIO, TX 78204</td><td colspan="2" id="zSideStateZip">CEDAR PARK, TX 78613</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Latitude:</td><td colspan="2" id="aLatitude">29.417136</td><td colspan="1" class="label">Latitude:</td><td colspan="2" id="zLatitude">30.532624</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Longitude:</td><td colspan="2" id="aLongitude">-98.494549</td><td colspan="1" class="label">Longitude:</td><td colspan="2" id="zLongitude">-97.784283</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Num:</td><td colspan="2" id="aNum">LOCAL</td><td colspan="1" class="label">Num:</td><td colspan="2" id="zNum">LOCAL</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Device ID:</td><td colspan="2" id="aDeviceID">JUNIPER MX480, SNANTXTK6ZW</td><td colspan="1" class="label">Device ID:</td><td colspan="2" id="zDeviceID">ADVA FSP 150-GE114PRO-C, CDPKTXDU4ZW</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Slot/Port:</td><td colspan="2" id="aSlotPort">ET-0/3/0</td><td colspan="1" class="label">Slot/Port:</td><td colspan="2" id="zSlotPort">ACCESS-1-1-1-3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">VLAN:</td><td colspan="2" id="aVlan">VLAN2580</td><td colspan="1" class="label">VLAN:</td><td colspan="2" id="zVlan">2580</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="heading">UDA Information</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="heading">Circuit Attributes</td><td colspan="2" class="heading">IPv4 Info</td><td colspan="2" class="heading">IPv6 Info</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Product/Service:</td><td colspan="1" id="productService">COM-EVPL</td><td colspan="1" class="label">IPv4 Subnet:</td><td colspan="1" id="ipv4Subnet"></td><td colspan="1" class="label">IPv6 Glue Subnet:</td><td colspan="1" id="ipv6GlueSubnet"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">EVC ID:</td><td colspan="1" id="evcID">4322580</td><td colspan="1" class="label">IPv4 Subnet Mask:</td><td colspan="1" id="ipv4SubnetMask"></td><td colspan="1" class="label">IPv6 Subnet:</td><td colspan="1" id="ipv6Subnet"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Off-Net Facility</td><td colspan="1" id="offnetFacility">NO</td><td colspan="1" class="label">IPv4 Range</td><td colspan="1" id="ipv4Range"></td><td colspan="1" rowspan="3" class="label">IPv6 Range:</td><td colspan="1" rowspan="3" id="ipv6Range"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">Latency Waiver:</td><td colspan="1" id="latencyWaiver"></td><td colspan="1" class="label">Gateway IPv4 Address:</td><td colspan="1" id="ipv4Gateway"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="label">TSP:</td><td colspan="1" id="tsp">NO</td><td colspan="1" class="label">IPv4 Glue IP:</td><td colspan="1" id="ipv4Glue"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td><td colspan="1" class="label">DNS 1:</td><td colspan="1" id="dns1"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td><td colspan="1" class="label">DNS 2:</td><td colspan="1" id="dns2"></td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <p style="page-break-before: always"></p>
+            <div id="stackDiv" style="display:visible"><br><table id="elementStack" class="stackyStack"><tbody><tr><th colspan="6" style="border:0px;">Element Stack</th></tr><tr><th>Element Number</th><th>Element ID</th><th>Equipment Vendor</th><th>Device TID</th><th>Port ID</th><th>VLAN</th></tr><tr><td>Element-1.1.0.2.1.1.0.0.0</td><td>21001.GE40L.SNANTXTK6ZW.SNANTXTK6ZW</td><td>JUNIPER</td><td>SNANTXTK6ZW</td><td>ET-0/3/0</td><td>VLAN2580</td></tr><tr><td>Element-1.1.0.2.1.2.0.0.0</td><td>21001.GE40L.SNANTXTK6ZW.SNANTXTK6ZW</td><td>JUNIPER</td><td>SNANTXTK6ZW</td><td>ET-4/3/0</td><td>2035</td></tr><tr><td>Element-3.3.0.1.1.1.0.0.0</td><td>51001.GE40L.CDPKTX101CW.CDPKTX100QW</td><td>JUNIPER</td><td>CDPKTX101CW</td><td>ET-1/3/0</td><td>VLAN2580</td></tr><tr><td>Element-3.3.0.1.1.2.0.0.0</td><td>51001.GE40L.CDPKTX101CW.CDPKTX100QW</td><td>JUNIPER</td><td>CDPKTX100QW</td><td>ET-0/0/96</td><td>VLAN2580</td></tr><tr><td>Element-3.3.0.2.2.1.0.0.0</td><td>51001.GE40L.CDPKTX101CW.CDPKTX100QW</td><td>JUNIPER</td><td>CDPKTX101CW</td><td>ET-10/3/0</td><td>VLAN2580</td></tr><tr><td>Element-3.3.0.2.2.2.0.0.0</td><td>51001.GE40L.CDPKTX101CW.CDPKTX100QW</td><td>JUNIPER</td><td>CDPKTX100QW</td><td>ET-1/0/96</td><td>VLAN2580</td></tr><tr><td>Element-4.4.0.1.1.0.0.0.0</td><td>51001.GE1.CDPKTX100QW.CDPKTXDU4ZW</td><td>JUNIPER</td><td>CDPKTX100QW</td><td>GE-0/0/28</td><td>VLAN2580</td></tr><tr><td>Element-4.4.0.4.4.0.0.0.0</td><td>51001.GE1.CDPKTX100QW.CDPKTXDU4ZW</td><td>ADVA</td><td>CDPKTXDU4ZW</td><td>NETWORK-1-1-1-1</td><td>VLAN2580</td></tr><tr><td>Element-5.5.0.1.1.0.0.0.0</td><td>51001.GE1.CDPKTXDU4ZW.CDPKTXDU4ZW</td><td>ADVA</td><td>CDPKTXDU4ZW</td><td>ACCESS-1-1-1-3</td><td>VLAN2580</td></tr><tr><td>Element-6.6.0.0.0.0.0.0.0</td><td>21.LOXX.000110..TWCC</td><td>ADVA</td><td>CDPKTXDU4ZW</td><td>ACCESS-1-1-1-3</td><td>2580</td></tr></tbody></table></div>
+            <p class="bottomText no-print">
+                <br>Support for DLRview has been frozen. Critical bugs can be reported to DL-SPAS-TOOLS@charter.com
+                <!--<button onclick="issueRept('General Issue')">Report Issue</button>-->
+            </p>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" onclick="closeModal()">×</span>
+                        <h2 style="text-align: center">Submit an Issue Report</h2>
+                    </div>
+                    <div class="modal-body">
+                        <table width="80%">
+                            <tbody><tr>
+                                <td style="width:10em">Issue Summary:</td>
+                                <td style="width:auto"><input class="long" type="text" id="issueSummary"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:10em">Issue Description:</td>
+                                <td style="width:auto"><textarea class="long" rows="10" id="issueDesc"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td style="width:10em">Your Email Address:</td>
+                                <td style="width:auto"><input class="long" type="text" id="submitterEmail"></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="modal-footer">
+                        <p class="center popup">
+                            <span class="popuptext" id="issueReportPopup" onclick="this.classList.remove(&quot;show&quot;)"></span>
+                            <button class="big" id="issueButton" onclick="submitRept()">Submit</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="./DLRView_files/minify.json.js"></script>
+    <script src="./DLRView_files/dlrview.js"></script>
+    
+    
+</body></html>
